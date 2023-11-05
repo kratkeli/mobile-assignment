@@ -11,24 +11,30 @@ struct RocketListView: View {
     @StateObject var viewModel: RocketListViewModel = RocketListViewModel()
     
     var body: some View {
-        NavigationStack {
-            List {
-                NavigationLink(destination: RocketDetailView()) {
-                    listItemView
-                }
-                .alignmentGuide(.listRowSeparatorLeading) {
-                    $0[.leading]
-                }
-                .listRowInsets(
-                    EdgeInsets(
-                        top: AppConstants.RocketList.ListRowInsets.top,
-                        leading: AppConstants.RocketList.ListRowInsets.leading,
-                        bottom: AppConstants.RocketList.ListRowInsets.bottom,
-                        trailing: AppConstants.RocketList.ListRowInsets.trailing
-                    )
-                )
+        NavigationView {
+            menuView
+                .navigationTitle(AppStrings.RocketList.title)
+        }
+    }
+
+   @ViewBuilder
+    private var menuView: some View {
+        List {
+            NavigationLink(destination: RocketDetailView()) {
+                listItemView
             }
-            .navigationTitle(AppStrings.RocketList.title)
+            .alignmentGuide(.listRowSeparatorLeading) {
+                $0[.leading]
+            }
+            
+            .listRowInsets(
+                EdgeInsets(
+                    top: AppConstants.RocketList.ListRowInsets.top,
+                    leading: AppConstants.RocketList.ListRowInsets.leading,
+                    bottom: AppConstants.RocketList.ListRowInsets.bottom,
+                    trailing: AppConstants.RocketList.ListRowInsets.trailing
+                )
+            )
         }
     }
     
