@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct RocketAppApp: App {
+struct RocketApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RocketListView()
         }
     }
 }
