@@ -9,7 +9,17 @@ import SwiftUI
 
 struct RocketDetailView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+
+        }
+        .navigationBarTitle("Name")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarItems(
+            trailing:
+                NavigationLink(destination: RocketLaunchView()) {
+                    Text("Launch")
+                }
+        )
     }
 }
 
