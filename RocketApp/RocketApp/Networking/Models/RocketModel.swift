@@ -40,50 +40,14 @@ struct Rocket: Decodable, Identifiable {
         id: 1,
         stages: 2,
         firstFlight: "2006-03-24",
-        height: Height(meters: 22.25),
-        diameter: Diameter(meters: 1.68),
-        mass: Mass(kg: 30146),
-        firstStage: Stage(
-            reusable: false,
-            engines: 1,
-            fuelAmountTons: 44.3,
-            burnTimeSec: 169
-        ),
-        secondStage: Stage(
-            reusable: false,
-            engines: 1,
-            fuelAmountTons: 3.38,
-            burnTimeSec: 378
-        ),
+        height: Height.exampleHeight,
+        diameter: Diameter.exampleDiameter,
+        mass: Mass.exampleMass,
+        firstStage: Stage.exampleStage,
+        secondStage: Stage.exampleStage,
         flickrImages: ["https://imgur.com/DaCfMsj.jpg", "https://imgur.com/azYafd8.jpg"],
         description: "The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth.",
         rocketId: "falcon1",
         rocketName: "Falcon 1"
     )
-}
-
-struct Height: Decodable {
-    var meters: Double
-}
-
-struct Diameter: Decodable {
-    var meters: Double
-}
-
-struct Mass: Decodable {
-    var kg: Int
-}
-
-struct Stage: Decodable{
-    var reusable: Bool
-    var engines: Int
-    var fuelAmountTons: Double
-    var burnTimeSec: Int?
-    
-    enum CodingKeys: String, CodingKey {
-        case reusable
-        case engines
-        case fuelAmountTons = "fuel_amount_tons"
-        case burnTimeSec = "burn_time_sec"
-    }
 }
