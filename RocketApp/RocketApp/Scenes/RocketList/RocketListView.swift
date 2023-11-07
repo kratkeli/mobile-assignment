@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct RocketListView: View {
-    @StateObject var viewModel: RocketListViewModel = RocketListViewModel()
+    @StateObject var viewModel: RocketListViewModel = RocketListViewModel(dependencies: rocketAppDependencies)
     
     var body: some View {
         NavigationView {
             menuView
                 .navigationTitle(AppStrings.RocketList.title)
+                .onAppear {
+                    viewModel.fetchRockets()
+                }
         }
     }
 
-   @ViewBuilder
+    @ViewBuilder
     private var menuView: some View {
         List {
             NavigationLink(destination: RocketDetailView()) {
@@ -26,7 +29,6 @@ struct RocketListView: View {
             .alignmentGuide(.listRowSeparatorLeading) {
                 $0[.leading]
             }
-            
             .listRowInsets(
                 EdgeInsets(
                     top: AppConstants.RocketList.ListRowInsets.top,
