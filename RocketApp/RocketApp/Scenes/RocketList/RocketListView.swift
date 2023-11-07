@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RocketListView: View {
-    @StateObject var viewModel: RocketListViewModel = RocketListViewModel(dependencies: rocketAppDependencies)
+    @StateObject private var viewModel: RocketListViewModel = RocketListViewModel(dependencies: rocketAppDependencies)
     
     var body: some View {
         NavigationView {
@@ -25,7 +25,7 @@ struct RocketListView: View {
         List {
             ForEach(viewModel.rockets) { rocket in
                 NavigationLink(destination: RocketDetailView()) {
-                    RocketListItemView(rocket: rocket)
+                    RocketListItemView(viewModel: RocketListItemViewModel(rocket: rocket))
                 }
                 .alignmentGuide(.listRowSeparatorLeading) {
                     $0[.leading]
