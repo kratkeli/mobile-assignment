@@ -7,10 +7,10 @@
 
 import Foundation
 
-/// Instance of `AppDependency`, which contains `RocketApp` dependencies.
-let appDependencies = AppDependency()
+/// Instance of `RocketAppDependency`, which contains `RocketApp` dependencies.
+let rocketAppDependencies = RocketAppDependency()
 
-final class AppDependency {
+final class RocketAppDependency {
     lazy var rocketAPIService: RocketAPIServicing = RocketAPIService(apiURL: AppStrings.RocketAPIService.apiURL)
 }
 
@@ -19,5 +19,5 @@ protocol HasNoDependency {}
 
 // MARK: - Extensions
 
-extension AppDependency: HasRocketAPIService {}
+extension RocketAppDependency: HasRocketAPIService {}
 
