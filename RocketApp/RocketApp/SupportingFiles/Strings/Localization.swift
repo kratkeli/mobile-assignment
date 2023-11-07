@@ -14,6 +14,10 @@ enum AppStrings {
     
     enum RocketList {
         static let title = "Rockets"
+        
+        enum Item {
+            static let firstFlight = "First flight: "
+        }
     }
     
     enum RocketDetail {
