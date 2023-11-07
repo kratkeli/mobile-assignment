@@ -16,14 +16,14 @@ struct RocketDetailView: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 10) {
+            VStack(spacing: AppConstants.RocketDetail.spacing) {
                 overviewView
                 parametersView
                 stagesView
                 photosView
             }
             .frame(maxWidth: .infinity)
-            .padding(15)
+            .padding(AppConstants.RocketDetail.padding)
             
         }
         .navigationBarTitle(viewModel.rocket.rocketName)
@@ -63,8 +63,8 @@ struct RocketDetailView: View {
     @ViewBuilder
     private var stagesView: some View {
         VStack {
-            RocketDetailStageView(viewModel: RocketDetailStageViewModel(stage: viewModel.rocket.firstStage, stageName: "First Stage"))
-            RocketDetailStageView(viewModel: RocketDetailStageViewModel(stage: viewModel.rocket.secondStage, stageName: "Second Stage"))
+            RocketDetailStageView(viewModel: RocketDetailStageViewModel(stage: viewModel.rocket.firstStage, stageName: AppStrings.RocketDetail.Stage.firstStage))
+            RocketDetailStageView(viewModel: RocketDetailStageViewModel(stage: viewModel.rocket.secondStage, stageName: AppStrings.RocketDetail.Stage.secondStage))
         }
         
     }

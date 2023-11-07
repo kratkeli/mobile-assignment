@@ -12,8 +12,8 @@ struct RocketDetailParameterView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10)
-                .frame(width: 100, height: 100)
+            RoundedRectangle(cornerRadius: AppConstants.RocketDetail.Parameter.cornerRadius)
+                .frame(width: AppConstants.RocketDetail.Parameter.width, height: AppConstants.RocketDetail.Parameter.height)
                 .foregroundColor(.rocketPink)
             VStack {
                 Group {

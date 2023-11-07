@@ -16,7 +16,7 @@ struct RocketDetailStageView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: AppConstants.RocketDetail.Stage.cornerRadius)
                 .frame(maxWidth: .infinity)
                 .foregroundColor(.stageGray)
             textView
@@ -25,7 +25,7 @@ struct RocketDetailStageView: View {
     
     @ViewBuilder
     private var textView: some View {
-        VStack(alignment: .leading, spacing: 15) {
+        VStack(alignment: .leading, spacing: AppConstants.RocketDetail.Stage.spacing) {
             Text(viewModel.stageName)
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -33,34 +33,38 @@ struct RocketDetailStageView: View {
             HStack {
                 Image("imgReusable")
                 if viewModel.isReausable() {
-                    Text("reausable")
+                    Text(AppStrings.RocketDetail.Stage.reusable)
                 } else {
-                    Text("not reausable")
+                    Text(AppStrings.RocketDetail.Stage.notReusable)
                 }
             }
             
             HStack {
                 Image("imgEngine")
                 if viewModel.hasMultipleEngines() {
-                    Text("\(viewModel.stage.engines) engines")
+                    Text("\(viewModel.stage.engines)") +
+                    Text(AppStrings.RocketDetail.Stage.engines)
                 } else {
-                    Text("\(viewModel.stage.engines) engine")
+                    Text("\(viewModel.stage.engines)") +
+                    Text(AppStrings.RocketDetail.Stage.engine)
                 }
             }
             
             HStack {
                 Image("imgFuel")
-                Text("\(viewModel.getTonsOfFuel()) tons of fuel")
+                Text("\(viewModel.getTonsOfFuel())") +
+                Text(AppStrings.RocketDetail.Stage.fuel)
             }
             
             HStack {
                 Image("imgBurn")
                 if viewModel.hasBurnTime() {
-                    Text("\(viewModel.stage.burnTimeSec!) seconds burn time")
+                    Text("\(viewModel.stage.burnTimeSec!)") +
+                    Text(AppStrings.RocketDetail.Stage.burn)
                 }
             }
         }
-        .padding(15)
+        .padding(AppConstants.RocketDetail.Stage.padding)
     }
     
 }

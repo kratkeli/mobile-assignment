@@ -19,4 +19,25 @@ enum AppConstants {
             static let spacing: CGFloat = 20
         }
     }
+    
+    enum RocketDetail {
+        static let spacing: CGFloat = 10
+        static let padding: CGFloat = 15
+        
+        enum Parameter {
+            static let cornerRadius: CGFloat = 10
+            static let width: CGFloat = 100
+            static let height: CGFloat = 100
+        }
+        
+        enum Stage {
+            static let cornerRadius: CGFloat = 10
+            static let spacing: CGFloat = 15
+            static let padding: CGFloat = 15
+        }
+        
+        enum Photo {
+            static let cornerRadius: CGFloat = 10
+        }
+    }
 }

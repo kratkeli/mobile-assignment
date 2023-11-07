@@ -22,7 +22,7 @@ struct RocketDetailPhotoView: View {
                 ProgressView()
             }
         )
-        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .clipShape(RoundedRectangle(cornerRadius: AppConstants.RocketDetail.Photo.cornerRadius))
     }
 }
 

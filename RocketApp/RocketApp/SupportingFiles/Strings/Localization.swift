@@ -25,5 +25,20 @@ enum AppStrings {
         static let overview = "Overview"
         static let parameters = "Parameters"
         static let photos = "Photos"
+        
+        static let height = "height"
+        static let diameter = "diameter"
+        static let mass = "mass"
+        
+        enum Stage {
+            static let firstStage = "First Stage"
+            static let secondStage = "Second Stage"
+            static let reusable = "reausable"
+            static let notReusable = "not reausable"
+            static let engines = " engines"
+            static let engine = " engine"
+            static let fuel = " tons of fuel"
+            static let burn = " seconds burn time"
+        }
     }
 }
