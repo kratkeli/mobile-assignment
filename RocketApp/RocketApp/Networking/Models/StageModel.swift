@@ -8,10 +8,10 @@
 import Foundation
 
 struct Stage: Decodable{
-    var reusable: Bool
-    var engines: Int
-    var fuelAmountTons: Double
-    var burnTimeSec: Int?
+    let reusable: Bool
+    let engines: Int
+    let fuelAmountTons: Double
+    let burnTimeSec: Int?
     
     enum CodingKeys: String, CodingKey {
         case reusable
@@ -20,7 +20,7 @@ struct Stage: Decodable{
         case burnTimeSec = "burn_time_sec"
     }
     
-    static var exampleStage = Stage(
+    static let exampleStage = Stage(
         reusable: false,
         engines: 1,
         fuelAmountTons: 44.3,

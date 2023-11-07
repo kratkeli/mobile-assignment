@@ -8,7 +8,7 @@
 import Foundation
 
 struct Mass: Decodable {
-    var kg: Int
+    let kg: Int
     
-    static var exampleMass = Mass(kg: 30146)
+    static let exampleMass = Mass(kg: 30146)
 }

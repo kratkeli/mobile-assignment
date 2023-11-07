@@ -8,7 +8,7 @@
 import Foundation
 
 struct Diameter: Decodable {
-    var meters: Double
+    let meters: Double
     
-    static var exampleDiameter = Diameter(meters: 1.68)
+    static let exampleDiameter = Diameter(meters: 1.68)
 }

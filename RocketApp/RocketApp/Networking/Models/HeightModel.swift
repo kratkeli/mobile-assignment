@@ -8,7 +8,7 @@
 import Foundation
 
 struct Height: Decodable {
-    var meters: Double
+    let meters: Double
     
-    static var exampleHeight = Height(meters: 22.25)
+    static let exampleHeight = Height(meters: 22.25)
 }

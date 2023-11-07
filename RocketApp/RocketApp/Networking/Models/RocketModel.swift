@@ -8,18 +8,18 @@
 import Foundation
 
 struct Rocket: Decodable, Identifiable {
-    var id: Int
-    var stages: Int
-    var firstFlight: String
-    var height: Height
-    var diameter: Diameter
-    var mass: Mass
-    var firstStage: Stage
-    var secondStage: Stage
-    var flickrImages: [String]
-    var description: String
-    var rocketId: String
-    var rocketName: String
+    let id: Int
+    let stages: Int
+    let firstFlight: String
+    let height: Height
+    let diameter: Diameter
+    let mass: Mass
+    let firstStage: Stage
+    let secondStage: Stage
+    let flickrImages: [String]
+    let description: String
+    let rocketId: String
+    let rocketName: String
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -36,7 +36,7 @@ struct Rocket: Decodable, Identifiable {
         case rocketName = "rocket_name"
     }
     
-    static var exampleRocket = Rocket(
+    static let exampleRocket = Rocket(
         id: 1,
         stages: 2,
         firstFlight: "2006-03-24",
