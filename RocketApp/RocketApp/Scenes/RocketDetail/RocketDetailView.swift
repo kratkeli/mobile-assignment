@@ -20,7 +20,7 @@ struct RocketDetailView: View {
                 overviewView
                 parametersView
                 stagesView
-                //photosView
+                photosView
             }
             .frame(maxWidth: .infinity)
             .padding(15)
@@ -69,9 +69,15 @@ struct RocketDetailView: View {
         
     }
     
-    /*@ViewBuilder
+    @ViewBuilder
     private var photosView: some View {
-    }*/
+        Text(AppStrings.RocketDetail.photos)
+            .bold()
+            .frame(maxWidth: .infinity, alignment: .leading)
+        ForEach(viewModel.rocket.flickrImages, id: \.self) { flickrImage in
+            RocketDetailPhotoView(imageURLString: flickrImage)
+        }
+    }
 }
 
 struct RocketDetailView_Previews: PreviewProvider {
