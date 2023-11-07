@@ -24,7 +24,7 @@ struct RocketListView: View {
     private var menuView: some View {
         List {
             ForEach(viewModel.rockets) { rocket in
-                NavigationLink(destination: RocketDetailView()) {
+                NavigationLink(destination: RocketDetailView(viewModel: RocketDetailViewModel(rocket: rocket))) {
                     RocketListItemView(viewModel: RocketListItemViewModel(rocket: rocket))
                 }
                 .alignmentGuide(.listRowSeparatorLeading) {
