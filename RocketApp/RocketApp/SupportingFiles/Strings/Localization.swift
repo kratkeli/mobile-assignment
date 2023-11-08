@@ -46,6 +46,6 @@ enum AppStrings {
     enum RocketLaunch {
         static let launch = "Launch"
         static let beforeLaunch = "Move your phone up\nto launch the rocket"
-        static let launchSuccessfull = "Launch successfull!"
+        static let launchSuccessfull = "Launch successful!"
     }
 }
