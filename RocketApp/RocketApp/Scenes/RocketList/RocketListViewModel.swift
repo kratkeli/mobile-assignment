@@ -13,6 +13,7 @@ final class RocketListViewModel: ObservableObject {
     let rocketAPIService: RocketAPIServicing
     
     @Published var rockets: [Rocket] = []
+    @Published var rocketsState: RocketsState = .notRequested
     
     init(dependencies: Dependencies) {
         rocketAPIService = dependencies.rocketAPIService
@@ -21,11 +22,12 @@ final class RocketListViewModel: ObservableObject {
     @MainActor
     func fetchRockets() {
         Task {
+            rocketsState = .loading
             do {
                 rockets = try await rocketAPIService.rockets()
+                rocketsState = .loaded
             } catch {
-                //error
-                rockets = []
+                rocketsState = .loadingFailed
             }
         }
     }

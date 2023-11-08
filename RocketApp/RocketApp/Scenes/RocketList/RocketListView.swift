@@ -19,9 +19,21 @@ struct RocketListView: View {
                 }
         }
     }
-
+    
     @ViewBuilder
     private var menuView: some View {
+        switch viewModel.rocketsState {
+        case .notRequested, .loading:
+            ProgressView()
+        case .loaded:
+            listView
+        case .loadingFailed:
+            Text("loading failed")
+        }
+    }
+
+    @ViewBuilder
+    private var listView: some View {
         List {
             ForEach(viewModel.rockets) { rocket in
                 NavigationLink(destination: RocketDetailView(viewModel: RocketDetailViewModel(rocket: rocket))) {
