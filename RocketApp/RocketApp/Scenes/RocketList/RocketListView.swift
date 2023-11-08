@@ -28,7 +28,7 @@ struct RocketListView: View {
         case .loaded:
             listView
         case .loadingFailed:
-            Text("loading failed")
+            errorView
         }
     }
 
@@ -51,6 +51,19 @@ struct RocketListView: View {
                     )
                 )
             }
+        }
+    }
+    
+    @ViewBuilder
+    private var errorView: some View {
+        VStack{
+            Spacer()
+            Text(AppStrings.RocketList.errorText)
+                .bold()
+            Spacer()
+            Image("imgError")
+                .resizable()
+                .scaledToFit()
         }
     }
 }

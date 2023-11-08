@@ -14,6 +14,7 @@ enum AppStrings {
     
     enum RocketList {
         static let title = "Rockets"
+        static let errorText = "Loading failed ☹️"
         
         enum Item {
             static let firstFlight = "First flight: "
