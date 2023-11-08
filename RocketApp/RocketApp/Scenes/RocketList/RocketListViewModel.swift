@@ -10,7 +10,7 @@ import SwiftUI
 final class RocketListViewModel: ObservableObject {
     typealias Dependencies = HasRocketAPIService
     
-    let rocketAPIService: RocketAPIServicing
+    private let rocketAPIService: RocketAPIServicing
     
     @Published var rockets: [Rocket] = []
     @Published var rocketsState: RocketsState = .notRequested
