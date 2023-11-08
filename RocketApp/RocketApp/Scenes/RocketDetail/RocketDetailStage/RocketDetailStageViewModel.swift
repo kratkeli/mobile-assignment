@@ -30,6 +30,7 @@ final class RocketDetailStageViewModel: ObservableObject {
         return false
     }
     
+    /// Converts fuel from Double to Int.
     func getTonsOfFuel() -> Int {
         return Int(stage.fuelAmountTons)
     }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Protocol used when VM has dependency on RocketAPIService.
 protocol HasRocketAPIService {
     var rocketAPIService: RocketAPIServicing { get }
 }
@@ -22,6 +23,7 @@ final class RocketAPIService: RocketAPIServicing {
         self.apiURL = apiURL
     }
     
+    /// Requests rockets from API.
     func rockets() async throws -> [Rocket] {
         try await makeRequest()
     }

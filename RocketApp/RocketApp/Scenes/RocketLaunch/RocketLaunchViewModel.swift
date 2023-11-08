@@ -15,6 +15,7 @@ final class RocketLaunchViewModel: ObservableObject {
     
     private let motionManager: CMMotionManager =  CMMotionManager()
     
+    /// Detects when the device is inclined and launches the rocket.
     func monitorDeviceMotion() {
         if motionManager.isDeviceMotionAvailable {
             motionManager.deviceMotionUpdateInterval = 0.1
@@ -35,6 +36,7 @@ final class RocketLaunchViewModel: ObservableObject {
         }
     }
     
+    /// Makes the rocket fly over the edge of the screen.
     private func launchRocket() {
         rocketImageString = "imgRocketFlying"
         description = AppStrings.RocketLaunch.launchSuccessfull
@@ -43,6 +45,7 @@ final class RocketLaunchViewModel: ObservableObject {
         }
     }
     
+    /// Returns rocket back to the start position.
     func resetRocket() {
         rocketImageString = "imgRocketIdle"
         rocketYOffset = AppConstants.RocketLaunch.yOffset

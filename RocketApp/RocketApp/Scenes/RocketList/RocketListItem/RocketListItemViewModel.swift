@@ -14,10 +14,12 @@ final class RocketListItemViewModel: ObservableObject {
         self.rocket = rocket
     }
     
+    /// Returns a date of the first flight in d.M.yyyy.
     func getFormattedFirstFlight() -> String {
         return formatDate(date: rocket.firstFlight)
     }
     
+    /// Reformats a date from API in yyyy-MM-dd to d.M.yyyy.
     private func formatDate(date: String) -> String {
         let oldDateFormatter = DateFormatter()
         oldDateFormatter.dateFormat = "yyyy-MM-dd"
