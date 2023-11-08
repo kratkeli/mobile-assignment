@@ -56,9 +56,9 @@ struct RocketDetailStageView: View {
                 Text(AppStrings.RocketDetail.Stage.fuel)
             }
             
-            HStack {
-                Image("imgBurn")
-                if viewModel.hasBurnTime() {
+            if viewModel.hasBurnTime() {
+                HStack {
+                    Image("imgBurn")
                     Text("\(viewModel.stage.burnTimeSec!)") +
                     Text(AppStrings.RocketDetail.Stage.burn)
                 }
