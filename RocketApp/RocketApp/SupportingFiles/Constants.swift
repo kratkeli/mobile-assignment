@@ -40,4 +40,12 @@ enum AppConstants {
             static let cornerRadius: CGFloat = 10
         }
     }
+    
+    enum RocketLaunch {
+        static let bottomPadding: CGFloat = 100
+        static let xOffset: CGFloat = 0
+        static let yOffset: CGFloat = 0
+        static let yOffsetAfterLaunch: CGFloat = -UIScreen.main.bounds.height
+        static let animationDuration: CGFloat = 1
+    }
 }

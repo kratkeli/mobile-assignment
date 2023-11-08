@@ -27,6 +27,4 @@ final class RocketListItemViewModel: ObservableObject {
         newDateFormatter.dateFormat = "d.M.yyyy"
         return newDateFormatter.string(from: oldDate!)
     }
-
-    
 }

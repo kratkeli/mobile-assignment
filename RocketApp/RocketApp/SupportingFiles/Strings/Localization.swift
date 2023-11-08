@@ -41,4 +41,10 @@ enum AppStrings {
             static let burn = " seconds burn time"
         }
     }
+    
+    enum RocketLaunch {
+        static let launch = "Launch"
+        static let beforeLaunch = "Move your phone up\nto launch the rocket"
+        static let launchSuccessfull = "Launch successfull!"
+    }
 }

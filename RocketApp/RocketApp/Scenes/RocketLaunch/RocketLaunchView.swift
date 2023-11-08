@@ -8,13 +8,38 @@
 import SwiftUI
 
 struct RocketLaunchView: View {
+    @ObservedObject private var viewModel: RocketLaunchViewModel
+    
+    init(viewModel: RocketLaunchViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        rocketView
+            .navigationBarTitle(AppStrings.RocketLaunch.launch)
+            .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                viewModel.monitorDeviceMotion()
+            }
+            .onDisappear {
+                viewModel.resetRocket()
+            }
+    }
+    
+    @ViewBuilder
+    private var rocketView: some View {
+        VStack {
+            Spacer()
+            Image(viewModel.rocketImageString)
+                .offset(x: AppConstants.RocketLaunch.xOffset, y: viewModel.rocketYOffset)
+            Text(viewModel.description)
+        }
+        .padding(.bottom, AppConstants.RocketLaunch.bottomPadding)
     }
 }
 
 struct RocketLaunchView_Previews: PreviewProvider {
     static var previews: some View {
-        RocketLaunchView()
+        RocketLaunchView(viewModel: RocketLaunchViewModel())
     }
 }

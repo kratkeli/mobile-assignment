@@ -30,7 +30,7 @@ struct RocketDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(
             trailing:
-                NavigationLink(destination: RocketLaunchView()) {
+                NavigationLink(destination: RocketLaunchView(viewModel: RocketLaunchViewModel())) {
                     Text(AppStrings.RocketDetail.launch)
                         .bold()
                 }
